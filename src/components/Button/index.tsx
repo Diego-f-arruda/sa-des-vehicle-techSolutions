@@ -1,5 +1,10 @@
-export function Button() {
+import "./styles.css"
+
+export default function Button() {
     return (
-        <h1>BUTTON</h1>
+        <button type="submit" className="button-custom">
+            Enviar
+        </button>
+
     )
 }
