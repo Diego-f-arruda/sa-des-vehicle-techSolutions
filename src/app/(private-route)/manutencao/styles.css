@@ -1,0 +1,35 @@
+.manutencao-container {
+    display: 'flex';
+    height: '100vh';
+    border: '2px solid black';
+}
+
+sidebar {
+    width: '150px';
+    borderRight: '2px solid black';
+    backgroundColor: '#f0f0f0';
+    padding: '10px';
+    writingMode: 'vertical-rl';
+    textOrientation: 'mixed';
+    textAlign: 'center';
+    fontWeight: 'bold';
+}
+
+verticalTitle {
+    writingMode: 'vertical-rl';
+    textOrientation: 'mixed';
+    marginBottom: '20px';
+    transform: 'rotate(180deg)';
+}
+
+ordem {
+    writingMode: 'horizontal-tb';
+    textOrientation: 'initial';
+    margin: '10px 0';
+    cursor: 'pointer';
+}
+
+detalhes {
+    flex: 1;
+    padding: '20px';
+}

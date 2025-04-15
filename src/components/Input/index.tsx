@@ -10,7 +10,7 @@ type InputsProps = {
     handle: () => void;
 }
 
-let optionsVetor = ["Cruze Vermelho", "Fusion Preto"]
+const optionsVetor = ["Cruze Vermelho", "Fusion Preto"]
 
 export function ComboBox({tamanho, label}: InputsProps) {
     return (
