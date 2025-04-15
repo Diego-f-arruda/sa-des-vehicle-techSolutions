@@ -1,56 +1,64 @@
 .container {
-    width: 280px;
+    width: 250px;
     height: 100vh;
-    display: flex;
-    background-color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.content {
-    width: 100%;
+    background-color: #121212; /* Preto fosco */
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
 }
-.item:hover {
-    background-color: #333333;
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .item {
-    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: start;
-    padding: 8px;
-    background-color: #000000;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
     text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
-.item svg {
-    width: 30px;
-    height: 30px;
-    color: #ffffff;
-    margin-left: 20px;
-}
-
-.item span {
-    padding: 24px;
-    font-size: 30px;
+.item:hover {
+    background-color: #007bff;
     color: white;
 }
 
-
 .selected {
-    background-color: white;
-}
-
-.selected span {
-    color: black;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
 }
 
 .selected svg {
-    color: #666666;
+    color: white;
 }
 
+.logo-area {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-area img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 5px;
+}
