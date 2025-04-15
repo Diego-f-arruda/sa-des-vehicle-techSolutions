@@ -6,7 +6,7 @@ type InputsProps = {
     text?: string;
     tamanho?: number;
     label?: string;
-    
+    tipo?: string;
     handle: () => void;
 }
 
@@ -25,13 +25,24 @@ export function ComboBox({tamanho, label}: InputsProps) {
     );
 }
 
-
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default function Checkboxes() {
+export function Checkboxes() {
   return (
     <div>
       <Checkbox {...label} />
     </div>
   );
+}
+
+export function inputText({label, tamanho}: InputsProps){
+  return(
+    <TextField label={label} variant="outlined" sx={{ width: {tamanho} }} />
+  )
+}
+
+export function inputNumber({label, tamanho, tipo}: InputsProps){
+  return(
+    <TextField id="outlined-number" label={label} type={tipo} sx={{ width: {tamanho} }}/>
+  )
 }
