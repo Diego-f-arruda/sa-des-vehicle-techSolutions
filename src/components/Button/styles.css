@@ -2,14 +2,14 @@
     padding: 14px 24px;
     border-radius: 8px;
     border: none;
-    background-color: #00875f;
+    background-color: #007bff;
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
 }
 
 .button-custom:not(:disabled):hover {
-    background-color: #00b37e;
+    background-color: #5da9fb;
 }
 
 .button-custom:disabled {
