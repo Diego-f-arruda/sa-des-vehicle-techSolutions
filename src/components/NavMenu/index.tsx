@@ -7,6 +7,8 @@ import { FaHome } from "react-icons/fa";
 import { BiBox } from "react-icons/bi";
 import { MdForklift } from "react-icons/md";
 import { HiMiniWrenchScrewdriver } from "react-icons/hi2";
+import logo from '@/assets/techSolutions.png'
+import Image from 'next/image'
 
 export default function NavMenu() {
     const pathName = usePathname();
@@ -44,6 +46,9 @@ export default function NavMenu() {
 
     return (
         <div className="container">
+            <div className="logo-area">
+                <Image src={ logo } alt=""/>
+        </div>
             <div className="content">
                 {itens.map(item => (
                     <Link 

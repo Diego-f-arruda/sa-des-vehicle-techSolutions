@@ -1,15 +1,12 @@
 .container {
     width: 250px;
     height: 100vh;
-    background-color: #121212; /* Preto fosco */
+    background-color: #121212;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -55,10 +52,9 @@
 }
 
 .logo-area img {
-    width: 120px;
+    width: 200px;
     height: auto;
     object-fit: contain;
     border-radius: 10px;
-    background-color: #fff;
     padding: 5px;
 }
