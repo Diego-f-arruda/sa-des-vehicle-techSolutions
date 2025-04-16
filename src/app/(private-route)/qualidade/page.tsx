@@ -1,3 +1,4 @@
+import SelectRadio from '@/components/SelectRadio';
 import './styles.css'
 
 export default function Qualidade() {
@@ -38,6 +39,11 @@ export default function Qualidade() {
                                 <input type="radio" id="acabamento2" name="acabamento" value="2" /><label htmlFor="acabamento2">★</label>
                                 <input type="radio" id="acabamento1" name="acabamento" value="1" /><label htmlFor="acabamento1">★</label>
                             </div>
+                        </div>
+
+                        <div className="criterio">
+                            <p>Fluidos</p>
+                            <SelectRadio/>
                         </div>
                     </div>
         

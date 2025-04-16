@@ -1,6 +1,7 @@
 
 import Button from "@/components/Button";
 import "./styles.css";
+import EntryInput from "@/components/TextArea";
 
 type Produto = {
     id: string;
@@ -18,13 +19,11 @@ export default function Estoque() {
       <div className="form">
         <h2>Cadastro de Equipamentos Recebidos</h2>
         <div className="inputs">
-          <input type="text" placeholder="Produto" required />
-          <input type="number" placeholder="Quantidade" required />
-          <input type="color" placeholder="Cor" />
-          <select> <option>Interna</option> <option>Externa</option></select>
-          <input type="number" placeholder="Custo" />
+          <EntryInput label="Produto" tipo="text" tamanho={900} />
+          <EntryInput label="Quantidade" tipo="number" tamanho={305} />
+          <EntryInput label="Custo" tipo="text" tamanho={305} />
           <label> Data de Entrada</label>
-          <input type="date" placeholder="Data de Entrada" />
+          <EntryInput label="Data de Entrada" tipo="date" tamanho={305} />          
           <Button/>
         </div>
       </div>
