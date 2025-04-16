@@ -28,16 +28,27 @@
 }
 
 .produtos {
-    margin-top: 20px;
+    margin: 15px;
     padding: 20px;
     border-top: 1px solid #eee;
     background-color: #7d7a7a13;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .produtos h1 {
     font-size: 25px;
     color: #333;
+    padding: 0px 5px;
+}
+
+.produtos h3 {
+    font-size: 20px;
+    color: #464646;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
 }
 
 #paragrafo {

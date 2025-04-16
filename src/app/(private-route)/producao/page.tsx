@@ -22,18 +22,21 @@ export default function Producao() {
                 <p id='paragrafo'>Carros cadastrados anteriormente</p>
 
                 <div className='produtos'>
-                    <h1>aaaaaaaaaaaaaaaaaaa</h1>
-                    <h1>aaaaaaaaaaaaaaaaaaa</h1>
+                    <h1>Celta</h1>
+                    <h3>4 portas</h3>
+                    <h3>Câmbio Automático</h3>
                     
                 </div>
                 <div className='produtos'>
-                    <h1>aaaaaaaaaaaaaaaaaaa</h1>
-                    <h1>aaaaaaaaaaaaaaaaaaa</h1>
+                    <h1>Palio</h1>
+                    <h3>2 portas</h3>
+                    <h3>Câmbio Automático</h3>
                     
                 </div>
                 <div className='produtos'>
-                    <h1>aaaaaaaaaaaaaaaaaaa</h1>
-                    <h1>aaaaaaaaaaaaaaaaaaa</h1>
+                    <h1>Opala</h1>
+                    <h3>4 portas</h3>
+                    <h3>Câmbio Manual</h3>
                     
                 </div>
         </div>
