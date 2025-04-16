@@ -3,7 +3,6 @@ import { Autocomplete, Checkbox, TextField } from "@mui/material";
 import "./styles.css"
 
 type InputsProps = {
-    text?: string;
     tamanho?: number;
     label?: string;
     tipo?: string;
@@ -33,16 +32,4 @@ export function Checkboxes() {
       <Checkbox {...label} />
     </div>
   );
-}
-
-export function inputText({label, tamanho}: InputsProps){
-  return(
-    <TextField label={label} variant="outlined" sx={{ width: {tamanho} }} />
-  )
-}
-
-export function inputNumber({label, tamanho, tipo}: InputsProps){
-  return(
-    <TextField id="outlined-number" label={label} type={tipo} sx={{ width: {tamanho} }}/>
-  )
 }

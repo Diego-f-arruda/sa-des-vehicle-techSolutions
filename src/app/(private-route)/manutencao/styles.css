@@ -13,7 +13,8 @@
 
 .ordens-abertas {
     flex: 1;
-    min-width: 300px;
+    min-width: 50px;
+    border: 1px solid #ddd;
 }
 
 .lista-ordem {
@@ -23,7 +24,19 @@
     color: #007bff;
 }
 
+.revisao {
+    width: 600px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .ordem {
+    width: auto;
     padding: 15px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
@@ -39,7 +52,8 @@
 
 .detalhes {
     flex: 2;
-    min-width: 300px;
+    width: fit-content;
+    height: fit-content;
     padding: 20px;
     background-color: #fafafa;
     border-radius: 10px;
