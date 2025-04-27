@@ -8,7 +8,7 @@ import FormLabel from '@mui/material/FormLabel';
 export default function SelectRadio() {
   return (
     <FormControl>
-      <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
+      <FormLabel id="demo-row-radio-buttons-group-label">Status</FormLabel>
       <RadioGroup
         row
         aria-labelledby="demo-row-radio-buttons-group-label"
@@ -16,12 +16,7 @@ export default function SelectRadio() {
       >
         <FormControlLabel value="Aprovado" control={<Radio />} label="Aprovado" />
         <FormControlLabel value="Reprovado" control={<Radio />} label="Reprovado" />
-        <FormControlLabel
-          value="disabled"
-          disabled
-          control={<Radio />}
-          label="other"
-        />
+        
       </RadioGroup>
     </FormControl>
   );

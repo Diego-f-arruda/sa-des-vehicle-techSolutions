@@ -14,7 +14,9 @@
 .ordens-abertas {
     flex: 1;
     min-width: 50px;
+    max-width: 200px;
     border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .lista-ordem {
@@ -30,8 +32,6 @@
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -49,14 +49,14 @@
 .ordem:hover {
     background-color: #e6f0ff;
 }
-
+/* 
 .detalhes {
     flex: 2;
     width: fit-content;
     height: fit-content;
     padding: 20px;
     background-color: #fafafa;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #eee;
 }
 
@@ -70,4 +70,4 @@
     font-size: 1.1em;
     color: #555;
     line-height: 1.5;
-}
+} */
