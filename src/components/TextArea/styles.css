@@ -1,25 +1,28 @@
-/* .estoque-container .form{
-    display: flex;
-    flex-direction: column;
-    background-color: #666777;
-    width: 100%;
-    border-radius: 16px;
-    padding: 20px;
-}
-
-.estoque-container .form .inputs input, select{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background-color: aliceblue;
-    height: 70px;
-    padding: 16px;
+.custom-textarea .MuiOutlinedInput-root {
+    background-color: #f9f9f9;
     border-radius: 8px;
-    line-height: 1.4;
-    color: #0d0d0d;
-    font-size: xx-large;
 }
 
-.estoque-container .form input:focus-within {
-    outline: 2px solid #00875f;
-} */
+.custom-textarea .MuiOutlinedInput-root fieldset {
+    border-color: #ccc;
+}
+
+.custom-textarea .MuiOutlinedInput-root:hover fieldset {
+    border-color: #000000;
+}
+
+.custom-textarea .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.custom-textarea .MuiInputLabel-root {
+    font-weight: 500;
+    color: #333;
+}
+
+.custom-textarea .MuiOutlinedInput-input {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+}

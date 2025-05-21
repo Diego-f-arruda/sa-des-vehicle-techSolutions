@@ -10,10 +10,14 @@ type InputsProps = {
 export default function EntryInput({ label, tipo, tamanho }: InputsProps) {
   return (
     <TextField
-      id="outlined-number"
-      label={label}
-      type={tipo}
-      sx={{ width: tamanho }}
-    />
+  id="custom-textarea"
+  label={label}
+  type={tipo}
+  multiline
+  rows={1}
+  className="custom-textarea"
+  sx={{ width: tamanho, m: '10px' }}
+/>
+
   );
 }

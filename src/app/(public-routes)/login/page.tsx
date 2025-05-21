@@ -2,18 +2,28 @@
 import { useRouter } from "next/navigation";
 import "./styles.css";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Home() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const disabledButton = !email || !(password.length > 8);
+  const disabledButton = !email;
 
   const router = useRouter();
 
   async function handleSubmit() {
-    router.replace("/");
-  }
+    try{
+      const response = await axios.post("http://localhost:3333/user/login", {
+        email, password
+    });
+
+        localStorage.setItem('access_token', response.data.access_token)
+        router.push('/dashboard')
+    } catch {
+        alert("Erro ao fazer login")
+    }
+}
 
   return (
     <div className="container">
