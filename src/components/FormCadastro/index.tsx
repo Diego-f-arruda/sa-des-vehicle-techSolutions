@@ -38,10 +38,10 @@ export default function FormCadastro() {
                     <DialogContentText>
                         Insira as informações do novo carro
                     </DialogContentText >
-                    <EntryInput label="Modelo" tipo="text" tamanho={150} />
+                    <EntryInput label="Modelo" tipo="text" tamanho={450} />
                     <EntryInput label="Uso" tipo="text" tamanho={150} />
-                    <EntryInput label="Quantidade" tipo="text" tamanho={150} />
-                    <EntryInput label="Custo" tipo="text" tamanho={150} />
+                    <EntryInput label="Quantidade" tipo="number" tamanho={100} />
+                    <EntryInput label="Custo" tipo="number" tamanho={200} />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
