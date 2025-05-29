@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import "./styles.css"
+import styles from "./styles.module.css"
 import { usePathname } from "next/navigation"
 import { PiSealCheckBold } from "react-icons/pi";
 import { FaHome } from "react-icons/fa";
@@ -17,7 +17,7 @@ export default function NavMenu() {
     const itens = [
         {
             label: "Home",
-            page: '/dashboard',
+            page: '/home',
             icon: <FaHome />
         },
         {
@@ -27,12 +27,12 @@ export default function NavMenu() {
         },
         {
             label: "Produção",
-            page: '/producao',
+            page: '/veiculo',
             icon: <MdForklift />
         },
         {
             label: "Estoque",
-            page: '/estoque',
+            page: '/produto',
             icon: <BiBox />
         },
         {
@@ -45,15 +45,15 @@ export default function NavMenu() {
 
 
     return (
-        <div className="container">
-            <div className="logo-area">
+        <div className={styles.container}>
+            <div className={styles.logoArea}>
                 <Image src={ logo } alt=""/>
         </div>
-            <div className="content">
+            <div className={styles.content}>
                 {itens.map(item => (
                     <Link 
                         key={item.label} 
-                        className={`item ${pathName === item.page ? "selected" : ""}`}
+                        className={`item ${pathName === item.page ? styles.selected : ""}`}
                         href={item.page}
                     >
                         {item.icon}

@@ -1,6 +1,6 @@
 // import { useRouter } from "next/navigation";
 // import { useEffect } from "react";
-import "./styles.css";
+import "./styles.module.css";
 
 export default function Dashboard() {
   // const router = useRouter();

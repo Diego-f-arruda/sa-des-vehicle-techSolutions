@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import "./styles.css";
+import styles from "./styles.module.css"
 import { useState } from "react";
 import axios from "axios";
 
@@ -13,26 +13,28 @@ export default function Home() {
   const router = useRouter();
 
   async function handleSubmit() {
-    try{
-      const response = await axios.post("http://localhost:3333/user/login", {
-        email, password
+    try {
+      const loginUrl = "http://localhost:3333/login"; 
+
+    const response = await axios.post(loginUrl, {
+      email, password
     });
 
-        localStorage.setItem('access_token', response.data.access_token)
-        router.push('/dashboard')
+      localStorage.setItem('access_token', response.data.access_token)
+      router.push('/produto')
     } catch {
-        alert("Erro ao fazer login")
+    alert("Erro ao fazer login")
     }
-}
+  }
 
   return (
-    <div className="container">
-      <div className="form">
+    <div className={styles.container}>
+      <div className={styles.form}>
         <h2>Login</h2>
         <input
           type="text"
           placeholder="E-mail"
-          className="input"
+          className={styles.input}
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
@@ -40,13 +42,13 @@ export default function Home() {
         <input
           type="password"
           placeholder="Password"
-          className="input"
+          className={styles.input}
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
 
         <button
-          className="button"
+          className={styles.button}
           onClick={handleSubmit}
           disabled={disabledButton}
         >

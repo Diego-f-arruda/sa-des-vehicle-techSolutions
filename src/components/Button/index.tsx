@@ -1,4 +1,4 @@
-import "./styles.css"
+import styles from "./styles.module.css"
 import React from 'react';
 
 
@@ -10,7 +10,7 @@ type ButtonProps = {
 }
 export default function Button({disabled, text, onClick}: ButtonProps) {
     return (
-        <button type="submit" className="button-custom" disabled = {disabled} onClick={onClick} > 
+        <button type="submit" className={styles.buttonCustom} disabled = {disabled} onClick={onClick} > 
             {text}
         </button>
 

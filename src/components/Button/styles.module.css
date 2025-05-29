@@ -1,6 +1,7 @@
-.button-custom {
-    padding: 14px 24px;
+.buttonCustom {
+    padding: 10px 24px;
     border-radius: 8px;
+    height: 3rem;
     border: none;
     background-color: #007bff;
     color: #ffffff;
