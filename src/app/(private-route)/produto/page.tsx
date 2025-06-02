@@ -69,12 +69,11 @@ export default function ProdutoPage() {
     buscaProdutos();
   }, []);
 
-  // Função para o envio do formulario de cadastro
   const handleCadastrarProduto = async () => {
     setFormSubmitting(true);
     setError(null);
     try {
-      
+      console.log('Valores ao tentar cadastrar:', { nome, quantidade });
       if (!nome || quantidade === '' || quantidade <= 0) {
         throw new Error('Por favor, preencha o nome e uma quantidade válida.');
       }
