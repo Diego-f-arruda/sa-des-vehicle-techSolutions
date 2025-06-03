@@ -1,16 +1,33 @@
+/* .fundoArea img {
+    background
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    clip: border-box;
+    display: flex;
+    position: relative;
+} */
 
 .container {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(175deg, #0560b3 55%, #0482c9 75%, #00d4ff 100%);
+    background-image: url('@/assets/capa.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: aliceblue;
 }
 
+
 .form {
-    background-color: #ffffff;
+    background-color: #ffffff00;
     display: flex;
     flex-direction: column;
     padding: 32px;
