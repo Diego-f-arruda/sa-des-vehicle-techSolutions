@@ -9,7 +9,7 @@ import {  FormControl, InputLabel, Select, MenuItem} from '@mui/material';
 
 enum TipoAcessorioEnum {
   PECA = 'PECA',
-  ELETRONICO = 'ELETRONICO',
+  ACESSORIO = 'ACESSORIO',
   ACABAMENTO = 'ACABAMENTO',
   KIT_RODA = 'KIT_RODA',
 }

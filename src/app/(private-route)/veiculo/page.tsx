@@ -10,7 +10,8 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  CircularProgress
+  CircularProgress,
+  SelectChangeEvent
 } from '@mui/material';
 
 enum CorVeiculo {
@@ -25,7 +26,6 @@ enum TipoCambio {
   AUTOMATICO = "AUTOMATICO",
   MANUAL = "MANUAL"
 }
-
 
 enum StatusVeiculo {
   APROVADO = "APROVADO",
@@ -49,6 +49,7 @@ type Veiculo = {
   status: StatusVeiculo;
   createdAt: string;
   updatedAt: string;
+  kitRoda?: Produto | null;
 };
 
 type Produto = {
@@ -76,6 +77,12 @@ export default function Producao() {
 
   const API_URL_VEICULO = 'http://localhost:3333/veiculo';
   const API_URL_PRODUTO = 'http://localhost:3333/produto';
+
+  const handleKitRodaChange = (event: SelectChangeEvent<string>) => {
+    
+    const value = event.target.value;
+    setSelectedKitRodaId(value === '' ? null : value);
+  };
 
   const fetchVeiculos = async () => {
     setLoading(true);
@@ -111,14 +118,13 @@ export default function Producao() {
       if (!token) {
         throw new Error('Token de autenticação não encontrado.');
       }
-      const response = await axios.get<Produto[]>(API_URL_PRODUTO, {
+      const response = await axios.get<Produto[]>(`${API_URL_PRODUTO}?tipo=${TipoAcessorio.KIT_RODA}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      const kitsRoda = response.data.filter(produto => produto.tipo === TipoAcessorio.KIT_RODA);
-      setAvailableKitsRoda(kitsRoda);
+      setAvailableKitsRoda(response.data);
     } catch (err) {
       console.error('Erro ao buscar kits de roda:', err);
       setError('Falha ao carregar kits de roda. Verifique sua conexão ou backend.');
@@ -236,11 +242,18 @@ export default function Producao() {
           <InputLabel id="kit-roda-label">Kit Roda (Opcional)</InputLabel>
           <Select
             labelId="kit-roda-label"
-            value={selectedKitRodaId || ''} // Usar '' para null na seleção
+            value={selectedKitRodaId === null ? '' : selectedKitRodaId} 
             label="Kit Roda (Opcional)"
-            onChange={(e) => setSelectedKitRodaId(e.target.value as string || null)}
+            onChange={handleKitRodaChange}
             className="custom-textarea"
-            disabled={loadingKitsRoda} // Desabilita enquanto carrega
+            disabled={loadingKitsRoda} 
+            renderValue={(selectedId) => {
+              if (selectedId === '') {
+                return 'Nenhum';
+              }
+              const selectedKit = availableKitsRoda.find(kit => kit.id === selectedId);
+              return selectedKit ? selectedKit.nome : 'Kit desconhecido';
+            }}
           >
             {loadingKitsRoda ? (
               <MenuItem disabled>
@@ -249,14 +262,14 @@ export default function Producao() {
             ) : availableKitsRoda.length === 0 ? (
               <MenuItem disabled>Nenhum Kit Roda disponível</MenuItem>
             ) : (
-              <>
-                <MenuItem value={null}>Nenhum</MenuItem> {/* Opção para nenhum kit */}
-                {availableKitsRoda.map((kit) => (
+              [
+                <MenuItem value={''} key="none-option">Nenhum</MenuItem>, 
+                ...availableKitsRoda.map((kit) => (
                   <MenuItem key={kit.id} value={kit.id}>
                     {kit.nome} (Qtd: {kit.quantidade})
                   </MenuItem>
-                ))}
-              </>
+                )),
+              ]
             )}
           </Select>
         </FormControl>
@@ -295,7 +308,7 @@ export default function Producao() {
               <h3>Modelo: {veiculo.modelo}</h3>
               <p>Cor: {veiculo.cor}</p>
               <p>Câmbio: {veiculo.cambio}</p>
-              <p>Kit Roda ID: {veiculo.kitRodaId || 'N/A'}</p>
+              <p>Kit Roda: {veiculo.kitRoda ? veiculo.kitRoda.nome.toUpperCase() : 'N/A'}</p>
               <p>Status: {veiculo.status.replace('_', ' ')}</p>
               <p>Cadastrado em: {new Date(veiculo.createdAt).toLocaleDateString()}</p>
             </div>
