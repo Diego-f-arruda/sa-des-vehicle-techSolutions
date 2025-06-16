@@ -1,0 +1,13 @@
+.criterio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 8px; 
+}
+
+.criterioNome {
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}

@@ -1,0 +1,37 @@
+.qualidadeFormContainer {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 600px; 
+    margin: 20px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instrucao {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.veiculoSelecaoContainer {
+    margin-bottom: 20px;
+}
+
+.criteriosContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.comentarioContainer {
+    margin-bottom: 20px;
+}
+
+.botaoContainer {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 20px;
+}   

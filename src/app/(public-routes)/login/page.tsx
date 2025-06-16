@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import fundo from '@/assets/capa.jpg';
 import Image from 'next/image';
+import FormCadastro from "@/components/FormCadastro";
 
 export default function Home() {
   const [email, setEmail] = useState<string>("");
@@ -57,7 +58,7 @@ export default function Home() {
           >
             Entrar
           </button>
-          <p>Ainda não é cadastrado?    <button type="submit">Cadastre-se</button></p>
+          <p>Ainda não é cadastrado?    <button type="submit" ><FormCadastro /></button></p>
         </div>
       </div>
     

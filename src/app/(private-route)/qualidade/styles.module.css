@@ -1,0 +1,22 @@
+
+.container {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    text-align: center;
+    color: #3f51b5;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.loading, .noVehiclesMessage {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #666;
+}
